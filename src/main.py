@@ -84,7 +84,7 @@ class ReadwiseDialog(QDialog):
       if e.code == 401:
         QMessageBox.critical(self, "Readwise", "Export failed due to incorrect access token. Please update the access token and try again.")
       else:
-        QMessageBox.critical(self, "Readwise", f"Export failed with status anirudh code: {e.code}")
+        QMessageBox.critical(self, "Readwise", f"Export failed with status anirudh code: {e.code} {e.reason} {e.headers}")
 
     except urllib.error.URLError as e:
         QMessageBox.critical(self, "Readwise", f"Export failed with reason: {e.reason}")
